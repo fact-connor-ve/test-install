@@ -1,12 +1,12 @@
 # .goreleaser.yaml
 version: 2
 
-project_name: myapp
+project_name: test
 
 builds:
-  - id: myapp
+  - id: test
     main: .
-    binary: myapp
+    binary: "{{ .ProjectName }}cmd"
     env:
       - CGO_ENABLED=0
     goos: ["windows"]
@@ -16,6 +16,7 @@ archives:
   - id: default
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     formats: ["zip"]
+    wrap_in_directory: true
 
 checksum:
   name_template: "checksums.txt"

@@ -1,6 +1,7 @@
 # .github/workflows/release.yml
 name: release
 
+run-name: building release ${{ github.ref_name }}
 on:
   push:
     tags:
