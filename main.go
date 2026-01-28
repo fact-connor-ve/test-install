@@ -22,6 +22,7 @@ func main() {
 	}
 
 	if *quiet {
+		fmt.Println("shhhhhhh....")
 		return
 	}
 
